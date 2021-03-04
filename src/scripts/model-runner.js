@@ -21,6 +21,12 @@ export async function setupModel(URL, predictionCB) {
   // shows a video feed from the webcam
   webcam = new tmPose.Webcam(200, 200, true); //width, height, flipped
   await webcam.setup(); // request access to the webcam
+  document.getElementById("webcam-wrapper").appendChild(webcam.webcam);
+  let wc = document.getElementsByTagName("video")[0];
+  wc.setAttribute("playsinline", true); // written with "setAttribute" bc. iOS buggs otherwise :-)
+  wc.muted = "true";
+  wc.id = "webcamVideo";
+
   await webcam.play();
 
   // get our canvas that we will draw the webcam and pose to
