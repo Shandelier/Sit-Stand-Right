@@ -90,6 +90,7 @@ h2 {
   display: inline-block;
   width: var(--box-size);
   margin: 0 10px;
+  text-align: left;
 }
 #graph-wrapper > div > :first-child {
   text-align: right;

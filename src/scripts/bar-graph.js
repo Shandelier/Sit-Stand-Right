@@ -5,8 +5,8 @@ let bars = {};
 let graphWrapper;
 
 // these are the colors of our bars
-let colors = ["#E67701", "#D84C6F", "#794AEF", "#1291D0"];
-let lightColors = ["#FFECE2", "#FFE9EC", "#F1F0FF", "#E2F5FF"];
+let colors = ["#195BFF", "#ffae17"];
+let lightColors = ["#dee8ff", "#fff0d4"];
 
 // This function makes the bar graph
 // it takes in a URL to a teachable machine model,
@@ -51,7 +51,7 @@ function makeBar(label, index) {
   // save references to each element, so we can update them later
   bars[label] = {
     bar: barEl,
-    percent: percentEl,
+    percent: percentEl
   };
 }
 

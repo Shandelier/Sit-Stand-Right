@@ -1,0 +1,59 @@
+#article {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  filter: blur(0);
+  transition-property: filter;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card {
+  border-radius: 20px;
+  display: inline-block;
+  margin: 4px;
+  padding: 40px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.headline {
+  font-weight: 700;
+  font-size: 7vw;
+  line-height: 130%;
+  letter-spacing: 0.03em;
+  font-family: Muli, sans-serif;
+  color: Black;
+  text-align: left;
+}
+
+.pic {
+  max-width: 720px;
+  margin-top: 30px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.text {
+  font-size: 4em;
+  color: #696969;
+  width: 100%;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 184.69%;
+  letter-spacing: 0.03em;
+}
+
+.fadein {
+  animation: 1s ease 0.2s 1 normal forwards running fadein;
+  margin-bottom: 0;
+  margin-left: 0px;
+}
+
+@keyframes fadein {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}

@@ -33,18 +33,6 @@ export async function setupModel(URL, predictionCB) {
   requestAnimationFrame(loop);
 }
 
-export function cameraState() {
-  state = !state;
-  if (!state) {
-    webcam.pause();
-    return;
-  } else {
-    webcam.play();
-    requestAnimationFrame(loop);
-    return;
-  }
-}
-
 // This function will run forever in a loop
 async function loop() {
   // update the webcam frame
@@ -84,4 +72,20 @@ function drawWebcamAndPose(pose) {
     tmPose.drawKeypoints(pose.keypoints, minPartConfidence, context);
     tmPose.drawSkeleton(pose.keypoints, minPartConfidence, context);
   }
+}
+
+export function cameraState() {
+  state = !state;
+  if (!state) {
+    webcam.pause();
+    return;
+  } else {
+    webcam.play();
+    requestAnimationFrame(loop);
+    return;
+  }
+}
+
+export function drawSkeletonState() {
+  drawSkeleton = !drawSkeleton;
 }
