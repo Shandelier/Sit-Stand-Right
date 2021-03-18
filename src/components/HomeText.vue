@@ -1,45 +1,82 @@
 <template>
-  <div>
-    <vs-row>
-      <vs-col offset="2" w="8">
-        <h1 class="headline fadein">
-          Hi, I'm Karol.<br />
-          versatile Developer, <br />
-          Hackathons Enthusiast,<br />
-          and master's Student at PWr.
+  <v-container>
+    <!-- <v-row>
+      <v-col v-for="k in 4" :key="k" cols="12" md="4">
+        <v-card class="pa-2" outlined tile>
+          One of two columns
+        </v-card>
+      </v-col>
+    </v-row> -->
+    <!-- <v-card
+      class="d-inline-flex px-2 ma-2"
+      :class="t.color"
+      v-for="t in tags"
+      :key="t.text"
+    >
+      {{ t.text }}
+    </v-card> -->
+
+    
+        <v-flex xs="12"  cols="10">
+          <h1 class="fadein space" >
+          Hi there, I'm{{'\xa0'}}Karol
         </h1>
-
-        <img class="pic" src="@/assets/Karol-pano.jpg" />
-
-        <p>
-          At this site you can try my new application -<br />
-          <b>Sit Stand Right</b>
-          or find my other projects and contact.
+        <h2 class="my-12">
+          Versatile <b class="glow">_Developer</b>, Hackathons Enthusiast, and{{'\xa0'}}Master's
+          Student.
+        </h2>
+        <v-row align="center" justify="center" >
+          <v-img
+          elevation="15"
+          class="pic"
+          src="@/assets/Karol-pano.jpg"
+        />
+        </v-row>
+        <p class="mt-12">
+          Long time ago I was amazed with Archimedes,
+          Leonardo Da Vinci and Wright Brothers inventions, and thought
+          <i>"everything to this time has been already invented. There is{{'\xa0'}}nothing new to make"</i>.
         </p>
-      </vs-col>
-    </vs-row>
-  </div>
+        <p>
+          Everything changed when I discovered programming. From there I{{'\xa0'}}started to explore ideas and practise skills to become like those{{'\xa0'}}great Inventors. I value their cotributon to{{'\xa0'}}culture and
+          technology and so – my work is dedicated to the same values.
+        </p>
+        <p>
+          Recently i'm focused on developing
+          <router-link to="/app" class="link">Sit{{'\xa0'}}Stand{{'\xa0'}}Right</router-link> – Gentle
+          reminder of healthy posture.
+        </p>
+        <p>
+          Correct posture is essential for wellbeing of people who devote themselfs to their craft.
+          <ul>
+            <li>Artist</li>
+            <li>Musicians</li>
+            <li>Programmers</li>
+            <li>Scientists</li>
+            <li>Office Workers</li>
+            <li>Writers</li>
+            <li>Engineers</li>
+            <li>...and so on</li>
+          </ul>
+        </p>
+        <p>
+            All which forgot about themselfs in flow of doing. If you're one of them -{{'\xa0'}}<b class="glow">this{{'\xa0'}}App{{'\xa0'}}is{{'\xa0'}}for{{'\xa0'}}You</b>
+        </p>
+        </v-flex>
+        <social-media-icons></social-media-icons>
+
+  </v-container>
 </template>
 
 <script>
+import SocialMediaIcons from './SocialMediaIcons.vue';
 export default {
-  name: "HomeText"
+  name: "HomeText",
+  components: {
+    SocialMediaIcons,
+  },
 };
 </script>
 
-<style lang="scss">
-@import "@/styles/typo.scss";
-
-h1 {
-  font-size: 36px !important;
-}
-
-p {
-  text-align: left;
-}
-
-b {
-  font-weight: 900 !important;
-  font-size: 1rem !important;
-}
+<style lang="scss" scoped>
 </style>

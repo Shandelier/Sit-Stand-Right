@@ -1,8 +1,26 @@
+:root {
+  background-color: #f1f3f5;
+  font-size: 12px;
+}
+
 #article {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   filter: blur(0);
   transition-property: filter;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+h1 {
+  font-family: "Source Code Pro", monospace;
+  font-size: 4em;
+  font-weight: 400;
+  font-style: italic;
+  margin-top: 28px;
+  margin-bottom: 28px;
+}
+
+h2 {
+  font-size: 2em;
+  margin-top: 8px;
 }
 
 .card {
@@ -18,13 +36,13 @@
   font-size: 7vw;
   line-height: 130%;
   letter-spacing: 0.03em;
-  font-family: Muli, sans-serif;
+  // font-family: Muli, sans-serif;
   color: Black;
   text-align: left;
 }
 
 .pic {
-  max-width: 720px;
+  // max-width: 720px;
   margin-top: 30px;
   width: 100%;
   border-radius: 10px;

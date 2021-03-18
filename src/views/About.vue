@@ -22,8 +22,6 @@
 </template>
 
 <style>
-@import "../styles/typebase.css";
-
 ol {
   list-style-type: decimal;
   text-align: start;
