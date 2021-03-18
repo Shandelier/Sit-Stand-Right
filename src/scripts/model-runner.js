@@ -74,9 +74,25 @@ function drawWebcamAndPose(pose) {
   // draw the keypoints and skeleton to the canvas
   // from the pose prediction of our model
   if (pose && drawSkeleton) {
-    const minPartConfidence = 0.1;
-    tmPose.drawKeypoints(pose.keypoints, minPartConfidence, context);
-    tmPose.drawSkeleton(pose.keypoints, minPartConfidence, context);
+    const minPartConfidence = 0.2;
+    const keypointSize = 2;
+    const lineWidth = 1;
+    const fillColor = "#fe3464";
+    tmPose.drawKeypoints(
+      pose.keypoints,
+      minPartConfidence,
+      context,
+      keypointSize,
+      fillColor,
+      fillColor
+    );
+    tmPose.drawSkeleton(
+      pose.keypoints,
+      minPartConfidence,
+      context,
+      lineWidth,
+      fillColor
+    );
   }
 }
 

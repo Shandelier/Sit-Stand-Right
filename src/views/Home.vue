@@ -1,9 +1,11 @@
 <template>
-  <section id="article">
-    <div>
-      <home-text></home-text>
-    </div>
-  </section>
+  <div>
+    <v-row align="center" justify="center">
+      <v-col xs="12" align="center" justify="center" style="max-width: 1080px">
+        <home-text />
+      </v-col>
+    </v-row>
+  </div>
 </template>
 
 <script>
@@ -15,6 +17,4 @@ export default {
 };
 </script>
 
-<style>
-@import "../styles/typebase.css";
-</style>
+<style></style>

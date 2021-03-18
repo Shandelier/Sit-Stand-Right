@@ -1,0 +1,194 @@
+/*! Typebase.less v0.1.0 | MIT License */
+/* Setup */
+html {
+  /* Change default typefaces here */
+  font-family: serif;
+  font-size: 100%;
+  -webkit-font-smoothing: antialiased;
+  text-align: start;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  // overflow-x: hidden;
+}
+/* Copy & Lists */
+p {
+  font-size: 1.2rem;
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  text-align: start;
+}
+ul,
+ol {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  margin-left: 2rem;
+}
+ul li,
+ol li {
+  line-height: 1.5rem;
+}
+ul ul,
+ol ul,
+ul ol,
+ol ol {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+blockquote {
+  line-height: 1.5rem;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  /* Change heading typefaces here */
+  font-family: sans-serif;
+  margin-top: 1.5rem;
+  margin-bottom: 0;
+  line-height: 1.5rem;
+}
+h1 {
+  font-size: 4.242rem;
+  line-height: 4.5rem;
+  margin-top: 3rem;
+  font-style: italic;
+}
+h2 {
+  font-size: 2.828rem;
+  line-height: 3.4rem;
+  margin-top: 3rem;
+}
+h3 {
+  font-size: 2.5rem;
+  line-height: 3.4rem;
+  // margin-top: 3rem;
+  font-style: italic;
+}
+h4 {
+  font-size: 0.707rem;
+}
+h5 {
+  font-size: 0.4713333333333333rem;
+}
+h6 {
+  font-size: 0.3535rem;
+}
+/* Tables */
+table {
+  margin-top: 1.5rem;
+  border-spacing: 0px;
+  border-collapse: collapse;
+}
+table td,
+table th {
+  padding: 0;
+  line-height: 33px;
+}
+/* Code blocks */
+code {
+  vertical-align: bottom;
+}
+
+a {
+  font-weight: bold;
+  color: #2c3e50 !important;
+}
+
+i {
+  color: #2c3e50 !important;
+}
+
+b {
+  font-weight: 900;
+  font-family: Consolas, Courier, monospace, "Menlo";
+}
+
+b.glow {
+  background: -webkit-linear-gradient(#fe3464, #fa7a4e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 6px 25px rgba(#fe3464, 0.4);
+  transition: box-shadow 0.5s ease;
+}
+
+button.v-icon.glow {
+  font-size: 1.5em;
+  border-radius: 100%;
+  padding: 0.5em;
+  align-self: center;
+  justify-self: center;
+  background: linear-gradient(45deg, #fe3464, #fa7a4e);
+  color: #ffffff;
+  box-shadow: 0 6px 25px rgba(#fe3464, 0.4);
+  transition: box-shadow 0.5s ease;
+  // TODO: transition on hover and focus
+}
+
+.v-card {
+  border-radius: 16px !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.theme--light.v-card {
+  color: #2c3e50 !important;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+/* Leading paragraph text */
+.lead {
+  font-size: 1.414rem;
+}
+/* Hug the block above you */
+.hug {
+  margin-top: 0;
+}
+
+.space {
+  margin-top: 6rem;
+  margin-bottom: 6rem;
+}
+
+.pic {
+  margin-top: 30px;
+  width: 100%;
+  border-radius: 10px;
+}
+
+#article {
+  filter: blur(0);
+  transition-property: filter;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.fadein {
+  animation: 1s ease 0.2s 1 normal forwards running fadein;
+}
+
+@keyframes fadein {
+  0% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
