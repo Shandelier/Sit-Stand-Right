@@ -2,8 +2,8 @@
   <v-app>
     <div id="app">
       <div id="nav">
-        <router-link to="/">Home</router-link> <i>|</i>
-        <router-link to="/app">Sit Stand Right</router-link>
+        <router-link to="/">Sit Stand Right</router-link> <i>|</i>
+        <router-link to="/about">about</router-link>
         <!-- | <router-link to="/about">How to use?</router-link> -->
       </div>
       <router-view />
@@ -38,11 +38,11 @@ export default {
 
   a {
     font-weight: 700;
-    color: #fd2459 !important;
+    color: #2c3e50 !important;
     font-size: 1.7rem;
 
     &.router-link-exact-active {
-      color: #2c3e50 !important;
+      color: #fd2459 !important;
     }
   }
 }
