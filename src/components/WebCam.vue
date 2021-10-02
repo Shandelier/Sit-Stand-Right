@@ -131,7 +131,7 @@ export default {
       // URL: "https://teachablemachine.withgoogle.com/models/rpUwKWKb4/",
       // URL: "https://teachablemachine.withgoogle.com/models/lkWqoRjyR/",
       URL: "https://teachablemachine.withgoogle.com/models/ltPV1b67d/",
-      webcamState: true,
+      webcamState: false,
       skeletonState: false,
       prediction: "",
       isSlouching: "",
@@ -161,7 +161,7 @@ export default {
     // we pass in another function: updateBarGraph (defined in the js/bar-graph.js file)
     // setupModel will store the updateBarGraph function,
     // and call it every time it has new prediction data from the model
-    setupModel(this.URL, data => {
+    setupModel(this.URL, (data) => {
       updateBarGraph(data);
       this.prediction = data.reduce((max, prediction) =>
         max.probability > prediction.probability ? max : prediction

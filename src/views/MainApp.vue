@@ -10,12 +10,14 @@
       >
         <section id="model" class="mx-4">
           <web-cam @slouchEvent="isSlouching = $event"></web-cam>
-          <!-- <h1>CURVA - your healthy posture</h1> -->
-          <!-- <h2>Tilt your head to try it out.</h2> -->
         </section>
 
         <section id="article">
           <posture-article :isSlouching="computedIsSlouching"></posture-article>
+        </section>
+
+        <section id="beta-button">
+          <beta-feature-button></beta-feature-button>
         </section>
       </v-col>
     </v-row>
@@ -23,6 +25,7 @@
 </template>
 
 <script>
+import BetaFeatureButton from "../components/BetaFeatureButton.vue";
 import PostureArticle from "../components/PostureArticle.vue";
 import WebCam from "../components/WebCam.vue";
 export default {
@@ -33,7 +36,8 @@ export default {
   },
   components: {
     PostureArticle,
-    WebCam
+    WebCam,
+    BetaFeatureButton
   },
   computed: {
     computedIsSlouching() {
