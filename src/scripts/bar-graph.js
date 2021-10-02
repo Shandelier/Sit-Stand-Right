@@ -5,8 +5,8 @@ let bars = {};
 let graphWrapper;
 
 // these are the colors of our bars
-let colors = ["#195BFF", "#ffae17"];
-let lightColors = ["#dee8ff", "#fff0d4"];
+let colors = ["#195BFF", "#ffae17", "#e84a50"];
+let lightColors = ["#dee8ff", "#fff0d4", "#F8C9CB"];
 
 // This function makes the bar graph
 // it takes in a URL to a teachable machine model,
@@ -19,6 +19,7 @@ export async function setupBarGraph(URL) {
   const json = await response.json();
   // get the names of the labels from the metadata of the model
   labels = json.labels;
+  labels["2"] = "health";
   // get the area of the webpage we want to build the bar graph
   graphWrapper = document.getElementById("graph-wrapper");
   // make a bar in the graph for each label in the metadata
@@ -59,7 +60,7 @@ function makeBar(label, index) {
 // The data is in the form of an array of objects like this:
 // [{ className:class1, probability:0.75 }, { className:class2, probability:0.25 }, ... ]
 // it uses this data to update the progress and labels of of each bar in the graph
-export function updateBarGraph(data) {
+export function updateBarGraph(data, consecutiveSlouchTime) {
   // iterate through each element in the data
   data.forEach(({ className, probability }) => {
     // get the HTML elements that we stored in the makeBar function
