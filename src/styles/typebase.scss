@@ -16,7 +16,9 @@ body {
   // overflow-x: hidden;
 }
 /* Copy & Lists */
-p {
+p,
+ul,
+ol {
   font-size: 1.2rem;
   line-height: 1.5rem;
   margin-top: 1.5rem;
@@ -25,8 +27,6 @@ p {
 }
 ul,
 ol {
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
   margin-left: 2rem;
 }
 ul li,
@@ -104,6 +104,16 @@ a {
   font-weight: bold;
   color: #2c3e50 !important;
 }
+a.glow {
+  font-weight: 900;
+  font-family: Consolas, Courier, monospace, "Menlo";
+  background: -webkit-linear-gradient(#fe3464, #fa7a4e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 6px 25px rgba(#fe3464, 0.4);
+  transition: box-shadow 0.5s ease;
+}
 
 i {
   color: #2c3e50 !important;
@@ -115,6 +125,17 @@ b {
 }
 
 b.glow {
+  background: -webkit-linear-gradient(#fe3464, #fa7a4e);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 6px 25px rgba(#fe3464, 0.4);
+  transition: box-shadow 0.5s ease;
+}
+
+router-link.glow {
+  font-weight: 900;
+  font-family: Consolas, Courier, monospace, "Menlo";
   background: -webkit-linear-gradient(#fe3464, #fa7a4e);
   background-clip: text;
   -webkit-background-clip: text;
