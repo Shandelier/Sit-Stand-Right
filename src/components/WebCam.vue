@@ -131,7 +131,7 @@ export default {
       // URL: "https://teachablemachine.withgoogle.com/models/rpUwKWKb4/",
       // URL: "https://teachablemachine.withgoogle.com/models/lkWqoRjyR/",
       URL: "https://teachablemachine.withgoogle.com/models/ltPV1b67d/",
-      webcamState: false,
+      webcamState: true,
       skeletonState: false,
       prediction: "",
       isSlouching: "",
@@ -148,7 +148,9 @@ export default {
   },
   mounted() {
     // timer for how long user have to slouch to be notified about it (in miliseconds)
-    this.consecutiveSlouchingTime = 1000;
+    this.consecutiveSlouchingTime = 20000;
+    this.consecutiveFrames = 200;
+    this.slouchFrames = 0;
     // this.predictionTimestamps = new Array();
     // setupBarGraph is defined in the js/bar-graph.js file
     setupBarGraph(this.URL);
@@ -162,29 +164,44 @@ export default {
     // setupModel will store the updateBarGraph function,
     // and call it every time it has new prediction data from the model
     setupModel(this.URL, (data) => {
-      updateBarGraph(data);
       this.prediction = data.reduce((max, prediction) =>
         max.probability > prediction.probability ? max : prediction
       ).className;
       this.postureDiagnosis();
+      data[2] = {
+        className: "health",
+        probability:
+          (this.consecutiveFrames - this.slouchFrames) / this.consecutiveFrames
+      };
+      updateBarGraph(data);
     });
   },
   methods: {
     postureDiagnosis() {
       this.predictionTimestamps.push(new Date().getTime());
 
-      if (this.predictionTimestamps.length >= 10) {
+      console.log(`this.consecutiveFrames`, this.consecutiveFrames);
+      console.log(`this.slouchFrames`, this.slouchFrames);
+
+      if (this.predictionTimestamps.length >= 50) {
         this.countFramerate();
         this.consecutiveFrames = this.consecutiveSlouchingTime / this.framerate;
       }
 
-      if (this.prediction == "straight") {
+      if (this.prediction == "straight" && this.slouchFrames > 0) {
         this.straightFrames += 1;
-        this.slouchFrames = 0;
-      } else {
-        this.slouchFrames += 1;
+        this.slouchFrames -= 1;
+      } else if (
+        this.prediction == "slouch" &&
+        this.slouchFrames + 1 < this.consecutiveFrames
+      ) {
+        this.slouchFrames += 2;
         this.straightFrames = 0;
       }
+
+      if (this.slouchFrames < 0) this.slouchFrames = 0;
+      else if (this.slouchFrames > this.consecutiveFrames)
+        this.slouchFrames = this.consecutiveFrames;
 
       if (this.slouchFrames >= this.consecutiveFrames) {
         this.isSlouching = true;
