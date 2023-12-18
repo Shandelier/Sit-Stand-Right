@@ -1,6 +1,6 @@
 # Sit Stand Right AI App
 
-This repo contains code for SSR app, free to use at www.SitStandRight.com,
+This repo contains code for AI Posture coach app, free to use at [link](https://bestsittingapp.netlify.app/),
 or by compiling from sources.
 
 ## Project setup
